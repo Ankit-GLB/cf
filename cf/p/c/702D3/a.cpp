@@ -1,3 +1,7 @@
+/* ID: PLUS._.MINUSS
+	TASK: test
+	LANG: C++
+*/
 #include<iostream>
 using namespace std;
 

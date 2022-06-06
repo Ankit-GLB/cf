@@ -1,3 +1,7 @@
+/* ID: PLUS._.MINUSS
+	TASK: test
+	LANG: C++
+*/
 #include<bits/stdc++.h>
 using namespace std;
 
