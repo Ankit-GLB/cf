@@ -5,7 +5,8 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void solve() {
+void solve(){
+	// commenet
 	long long n;
 	cin>>n;
 	// n%3==0;
