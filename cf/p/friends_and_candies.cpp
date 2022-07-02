@@ -5,30 +5,34 @@ using namespace std;
 #define ll long long
 
 void solve() {
-	ll int a,b,n;
-	cin>>a>>b>>n;
-	if(a<b){
-		lln temp = a;
-		a=b;
-		b = temp;
+	int n;
+	cin>>n;
+	vector<int>a(n);
+	ll s=0;
+	for(int i=0;i<n;i++){
+		cin>>a[i];
+		s+=a[i];
 	}
-	int i=0;
-	while(1){
-		if(a>n||b>n){
-			break;
-		}
-		else{
-			if(i%2==0){
-				a+=b;
+	for(int i=0;i<n;i++){
+		if(a[i]){
+			for(int j=0;j<n;j++){
+				if(a[j]){
+					
+				}
+				else continue;
 			}
-			else{
-				b+=a;
-			}
-			i++;
 		}
+		else continue;
 	}
-	cout << i << endl;
-
+	if(s%n!=0){
+		cout << -1 << endl;
+		return;
+	}
+	int v = s/n,ans=0;
+	for(int i=0;i<n;i++){
+		if(a[i]>v)s++;
+	}
+	cout << ans << endl;
 }
 int main(){
 	// This is Klez's Template.
