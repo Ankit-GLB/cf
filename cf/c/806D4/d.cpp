@@ -7,21 +7,36 @@ using namespace std;
 void solve() {
 	int n;
 	cin>>n;
-	vector<string>a(n);
+	vector<string>a;
+	unordered_set<string>x;
 	for(int i=0;i<n;i++){
-		cin>>a[i];
+		string temp;
+		cin>>temp;
+		a.push_back(temp);
+		x.insert(temp);
 	}
-	unordered_set<string>t;
 	for(int i=0;i<n;i++){
-		for(int j=0;j<n;j++){
-			t.insert(a[i] + a[j]);
+		// for each element a[i] perform the query of brute force
+		// to find all possible strigns whose sum is equal to the
+		// given string, and check whether the sub-strings are 
+		// present in the given set of strings or not. 
+		// if present then print "1" else print "0"
+		int s=0;
+		for(int j=1;i<=a[i].length()-1;j++){
+// a[i].substr(0,i) and a[i].substr(i+1,a[i].length()-1)
+			string s1 = a[i].substr(0,j);
+			string s2 = a[i].substr(j,a[i].length()-j);
+			// 0 1 2 3 4 5
+			// a b c d e f a[i].length() == 6
+			if(x.count(s1)>0 && x.count(s2)>0){
+				s++;
+				cout << 1;
+				break;
+			}
 		}
+		if(s!=0)cout<<0; 
 	}
-	for(int i=0;i<n;i++){
-		if(t.count(a[i])!=0)cout << 1;
-		else cout << 0;
-	}
-	cout << endl;
+	cout<<endl;
 }
 int main(){
 	// This is Klez's Template.

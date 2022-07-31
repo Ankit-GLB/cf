@@ -16,18 +16,6 @@ void solve() {
 	int ans=0,i;
 	for(int i=1;i<=n;i++){
 		a[i] += a[i-1];
-		// if(a[i]>x){
-		// 	ans = i-1;
-		// }
-		if(a[i]>x){
-			a[i] = 0;
-		}
-		else if(a[i]<=x){
-			a[i] = a[i]/x;
-		}
-	}
-	for(int i=n;i>0;i++){
-		a[i-1] = a[i-1] - a[i];
 	}
 
 	for(int i=0;i<=n;i++){
